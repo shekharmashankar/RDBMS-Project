@@ -12,7 +12,7 @@ const Order = require("./models/Order");
 
 mongoose
   .connect(
-    "mongodb+srv://sagar:sagar2019.@cluster0.nxqpo.mongodb.net/WebDevWorkshop?retryWrites=true&w=majority",
+    "process.env.MongoURI",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -286,7 +286,7 @@ app.post("/logout",(req,res)=>{
     res.redirect("/login")
 })
 
-const PORT = 3000;
+const PORT = process.env.PORT;
   app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
   });
