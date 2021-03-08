@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="./css/admin.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js"
+        crossorigin="anonymous"></script>
+    
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">GaadiMaalik Admin Panel</a>
+        
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search"
+                    aria-describedby="basic-addon2" />
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ml-auto ml-md-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#">Settings</a><a class="dropdown-item" href="#">Activity Log</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="login.html">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+        </div>
+
+        </nav>
+    </div>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid">
+                <h4 class="mt-4">Dashboard</h4>
+                <h1 class="mt-4" style="padding-top: 30px; padding-bottom: 20px;">Dashboard</h1>
+                <div class="row">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-primary text-white mb-4">
+                            <div class="card-body">
+                                <i class="fas fa-users fa-2x"></i>
+                                Total Users
+                            </div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <h1 style="position: relative; left: 90px;">1078</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-warning text-white mb-4">
+                            <div class="card-body">
+                                <i class="fas fa-shopping-cart fa-2x"></i>
+                                Total Orders
+                            </div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <h1 style="position: relative; left: 90px;">107</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-success text-white mb-4">
+                            <div class="card-body">
+                                <i class="far fa-laugh-beam fa-2x"></i>
+                                Happy Customers!
+                            </div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <h1 style="position: relative; left: 90px;">937</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card bg-danger text-white mb-4">
+                            <div class="card-body">
+                                <i class="fas fa-tasks fa-2x"></i>
+                                Pending Orders
+                            </div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <h1 style="position: relative; left: 90px;">9</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                </div>
+                
+                <!-- Main Site -->
+                <main id="site-main">
+                    <div class="container">
+                        <!-- <div class="box-nav d-flex justify-between">
+                            <a href="/add-user" class="border-shadow">
+                                <span class="text-gradient">New User <i class="fas fa-user-plus"></i></span>
+                            </a>
+                        </div> -->
+                        <button type="submit"><a href="./add_user"><span>New User</span></a></button>
+
+                        <!-- form handling -->
+                        <form action="/" method="POST">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Pricing</th>
+                                        <th>Date</th>
+                                        <th>Pickup Location</th>
+                                        <th>Drop Location</th>
+                                        <th>Email ID</th>
+                                        <th>Extra Messages</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% allData.forEach(function(row){ %>
+                                        <tr>
+                                            <td>
+                                                <%= row.firstandlastname %>
+                                            </td>
+                                            <td>
+                                                <%= row.Pricing %>
+                                            </td>
+                                            <td>
+                                                <%= row.Date %>
+                                            </td>
+                                            <td>
+                                                <%= row.PickupState %>, <%= row.PickupCity %>
+                                            </td>
+                                            <td>
+                                                <%= row.DropState %>, <%= row.DropCity %>
+                                            </td>
+                                            <td>
+                                                <%= row.emailID %>
+                                            </td>
+                                            <td>
+                                                <%= row.extraMessages %>
+                                            </td>
+                                            <td>
+                                                <a class="btn border-shadow update"
+                                                    href="/update-user?id=<%= row._id%>"></a>
+                                                <span class="text-gradient"><i class="fas fa-edit"></i></span>
+                                                </a>
+                                                <a class="btn border-shadow delete" data-id=<%=row._id%> >
+                                                    <span class="text-gradient"><i class="fas fa-trash-alt"></i></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </main>
+                <!-- /Main Site -->
+            </div>
+    </div>
+</main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Your Website 2019</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+   
+   
+    <!-- include footer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+    <!-- <script src="assets/demo/datatables-demo.js"></script> -->
+    
+</body>
+
+</html>
